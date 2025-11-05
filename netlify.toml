@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = ".next/static"
+  functions = ".next/server"
+
+[context.production.environment]
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/___next"
+  status = 200
